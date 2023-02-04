@@ -14,12 +14,12 @@ $(document).ready(function () {
     //loop for timeblocks, allows for determining past, present, and future
     $(".time-block").each(function () {
         var currentHour = moment().hours();
-        var timeBlockId = $(this).attr("id");
-        var thisTimeBlockHour = timeBlockId.slice(5);
+        var blockId = $(this).attr("id");
+        var blockHour = blockId.slice(5);
 
-        if (thisTimeBlockHour < currentHour) {
+        if (blockHour < currentHour) {
             $(this).addClass("past")
-        } else if (thisTimeBlockHour == currentHour) {
+        } else if (blockHour == currentHour) {
             $(this).addClass("present")
         } else {
             $(this).addClass("future")
